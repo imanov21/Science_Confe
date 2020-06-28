@@ -1,0 +1,33 @@
+<%- include("../partials/header") %>
+<h1 style="text-align: center;">Результати до опитувань</h1>
+<div class="container">
+	<div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        <% confs.forEach(function(conf){ %>
+			<% if(currentUser && conf.author.id.equals(currentUser._id)){ %>
+				<% if (conf.testResults.length > 0) { %>
+					<% conf.testResults.forEach(function(testResult){ %>
+						<div class="col-md-3 col-sm-6">
+							<div class="thumbnail">
+							   <div class="caption">
+								   <h4>Результати до конференції </h4>
+								   <h4><%= conf.name %></h4>
+							   </div>
+						       <hr>
+							   <p>
+								   <a>Відправленно <%= testResult.sender.username %></a>
+							   </p>
+							   <hr>
+							   <p>
+								   <a href="/test/<%= testResult._id %>" class="btn btn-primary">Детальніше</a>
+							   </p>
+							</div>
+						</div>
+					<% });%>
+				<% } else { %>
+				<h4 style="text-align:center;">У вас не має результатів опитувань до <%= conf.name %></h4>
+				<% } %>
+			<% } %>
+		<% }) %>
+    </div>
+</div>
+<%- include("../partials/footer") %>

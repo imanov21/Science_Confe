@@ -1,0 +1,67 @@
+<%- include("../partials/header") %>
+<div class="container">
+    <div class="row">
+        <h1 style="text-align: center">Відредагувати <%= conf.name %></h1>
+        <div style="width: 30%; margin: 25px auto;">
+            <form action="/confs/<%= conf._id %>?_method=PUT" method="POST">
+                <div class="form-group">
+					<label>Назва конференції</label>
+                    <input class="form-control" type="text" name="conf[name]" value="<%= conf.name %>">
+                </div>
+                <div class="form-group">
+					<label>Фотографія конференції</label>
+                    <input class="form-control" type="text" name="conf[image]" value="<%= conf.image %>">
+                </div>
+				<div class="form-group">
+					<label>Веб-сайт конференції</label>
+                    <input class="form-control" type="text" name="conf[website]" value="<%= conf.website %>">
+                </div>
+				<div class="form-group">
+					<label>Дата початку конференції</label>
+                    <input class="form-control" type="text" name="conf[beginDate]" value="<%= conf.beginDate %>">
+                </div>
+				<div class="form-group">
+					<label>Дата закінчення конференції</label>
+                    <input class="form-control" type="text" name="conf[endDate]" value="<%= conf.endDate %>">
+                </div>
+				<div class="form-group">
+					<label>Дата закінчення прийому документів до конференції</label>
+                    <input class="form-control" type="text" name="conf[deadlineForDocs]" value="<%= conf.deadlineForDocs %>">
+                </div>
+				<div class="form-group">
+					<label>Місце проведення конференції</label>
+                    <input class="form-control" type="text" name="conf[location]" value="<%= conf.location %>">
+                </div>
+				<div class="form-group">
+					<label>Контактна особа</label>
+                    <input class="form-control" type="text" name="conf[contactPerson]" value="<%= conf.contactPerson %>">
+                </div>
+				<div class="form-group">
+					<label>Адреса електронної пошти організації</label>
+                    <input class="form-control" type="text" name="conf[orgEmailAdress]" value="<%= conf.orgEmailAdress %>">
+                </div>
+				<div class="form-group">
+					<label>Ким організовано?</label>
+                    <input class="form-control" type="text" name="conf[orgBy]" value="<%= conf.orgBy %>">
+                </div>
+				<div class="form-group">
+					<label>Тема(и)</label>
+                    <input class="form-control" type="text" name="conf[topics]" value="<%= conf.topics %>">
+                </div>
+				<div class="form-group">
+					<label>Посилання на приклад</label>
+                    <input class="form-control" type="text" name="conf[linkToExample]" value="<%= conf.linkToExample %>">
+                </div>
+                <div class="form-group">
+					<label>Опис</label>
+                    <input class="form-control" type="text" name="conf[description]" value="<%= conf.description %>">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Прийняти!</button>
+                </div>
+            </form>
+            <a href="/confs">Повернутися</a>
+        </div>
+    </div>
+</div>
+<%- include("../partials/footer") %>

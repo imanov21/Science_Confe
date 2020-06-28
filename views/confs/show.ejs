@@ -1,0 +1,186 @@
+<%- include("../partials/header") %>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-6">
+            <div class="thumbnail">
+                <img class="img-responsive" src="<%= conf.image %>">
+                <div class="caption-full">
+					<div class="row">
+						<div class="col-xs-12">
+							<h3 id="conference-title"><a><%= conf.name %></a></h3>
+							<div class="row">
+								<div class="col-xs-6">		
+									<h4 class="pull-left" id="main_info">Веб-сайт конференції:</h4>
+								</div>
+								<div class="col-xs-6">	
+									<h4 class="pull-right"><%= conf.website %></h4>
+								</div>
+							</div>
+							<hr>
+							<h4>Час і місце</h4>
+							<hr>
+							<div class="row">
+								<div class="col-xs-6">	
+									<h4>Дата початку конференції:</h4>
+								</div>
+								<div class="col-xs-6">	
+									<h4 class="pull-right"><%= conf.beginDate %></h4>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-6">	
+									<h4>Дата закінчення конференції:</h4>
+								</div>
+								<div class="col-xs-6">	
+									<h4 class="pull-right"><%= conf.endDate %></h4>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-6">	
+									<h4>Дата закінчення прийому документів до конференції:</h4>
+								</div>
+								<div class="col-xs-6">	
+									<h4 class="pull-right"><%= conf.deadlineForDocs %></h4>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-6">	
+									<h4>Місце проведення конференції:</h4>
+								</div>
+								<div class="col-xs-6">	
+									<h4 class="pull-right"><%= conf.location %></h4>
+								</div>
+							</div>
+								<hr>
+								<h4>Контакти</h4>
+								<hr>
+							<div class="row">
+								<div class="col-xs-6">	
+									<h4>Контактна особа:</h4>
+								</div>
+								<div class="col-xs-6">	
+									<h4 class="pull-right"><%= conf.contactPerson %></h4>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-6">	
+									<h4>Адреса електронної пошти організації:</h4>
+								</div>
+								<div class="col-xs-6">	
+									<h4 class="pull-right"><%= conf.orgEmailAdress %></h4>
+								</div>
+							</div>
+								<hr>
+								<h4>Додаткова інформація</h4>
+								<hr>
+							<div class="row">
+								<div class="col-xs-6">	
+									<h4>Організатори:</h4>
+								</div>
+								<div class="col-xs-6">	
+									<h4 class="pull-right"><%= conf.orgBy %></h4>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-6">	
+									<h4>Теми:</h4>
+								</div>
+								<div class="col-xs-6">	
+									<h4 class="pull-right"><%= conf.topics %></h4>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-6">	
+									<h4>Посилання на приклад:</h4>
+								</div>
+								<div class="col-xs-6">	
+									<h4 class="pull-right"><%= conf.linkToExample %></h4>
+								</div>
+							</div>
+						</div>
+					</div>
+					<hr>
+					<h4>Опис</h4>
+					<hr>
+					<h4><%= conf.description %></h4>
+					<hr>
+                    <p>
+                        <em>Представлено <%= conf.author.username %></em>
+                    </p>
+					<hr>
+                    <% if(currentUser && conf.author.id.equals(currentUser._id)){ %>
+                        <a class="btn btn-warning" href="/confs/<%= conf._id %>/edit">Редагувати</a>
+                        <form id="delete-form" action="/confs/<%= conf._id %>?_method=DELETE" method="POST">
+                            <button class="btn btn-danger">Відмінити</button>
+                        </form>
+                    <% }%>
+					<% if(currentUser){ var allow = true; %>
+					<% conf.participants.forEach(function(participant){ %>
+					<% if(participant.author.id.equals(currentUser._id)){ allow = false;} else {}});} if (allow != true){%>
+					<div class="text-right">
+						<a class="btn btn-success" href="/confs/<%= conf._id %>/participants/new" style="display:none;">Зареєструйтесь на конференцію</a>
+					</div>
+					<% } else { %>
+					<div class="text-right">
+						<a class="btn btn-success" href="/confs/<%= conf._id %>/participants/new">Зареєструйтесь на конференцію</a>
+					</div>
+					<% } %>
+                </div>
+            </div>
+			
+			<h2 id="list">Список учасників конференції</h2>
+			
+            <div class="well">
+                <hr>
+                <% conf.participants.forEach(function(participant){ %>
+				<div class="participantion">
+					<div class="row">
+								<div class="col-xs-6">	
+									<span class="pull-left">Повне ім'я:</span>
+								</div>
+								<div class="col-xs-6">	
+									<span class="pull-right"><strong><%= participant.name %></strong></span>
+								</div>
+					</div>
+					<div class="row">
+									<div class="col-xs-4">	
+										<span class="pull-left"> Інтереси / теми для обговорення: </span>
+									</div>
+									<div class="col-xs-4"><% if(currentUser && participant.author.id.equals(currentUser._id)){ %>	
+										<a class="btn btn-xs btn-warning" href="/confs/<%=conf._id %>/participants/<%=participant._id %>/edit">Редагувати</a>
+										<form id="delete-form" action="/confs/<%=conf._id %>/participants/<%=participant._id %>?_method=DELETE" method="POST">
+												<button class="btn btn-xs btn-danger">Скасувати участь</button>
+										</form><% } %>
+									</div>
+									<div class="col-xs-4">	
+										<span class="pull-right"><%= participant.interests %></span>
+									</div>
+					</div>  
+				</div>
+                           
+                <% }) %>
+				<hr>
+            </div>
+        </div>
+		<div class="col-md-3">
+            <p class="lead">Science Conf</p>
+            <div class="list-group">
+                <li class="list-group-item"><a href="#main_info">Основна інформація</a></li>
+                <li class="list-group-item"><a href="#list">Список учасників</a></li>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+	$(".list-group-item").on("mouseenter", function(){
+		$(this).addClass("active");
+	});
+	$(".list-group-item").on("mouseleave", function(){
+		$(this).removeClass("active");
+	});
+</script>
+
+<%- include("../partials/footer") %>

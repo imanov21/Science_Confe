@@ -1,0 +1,31 @@
+<%- include("../partials/homeHeader") %>
+
+ <div class="container">
+     <header class="jumbotron">
+         <div class="container" style="text-align:center;">
+             <h1>Ласкаво просимо на </h1>
+			 <h1>Science Confe!</h1>
+             <p>Перегляньте майбутні конференції з усього світу</p>
+             <p>
+                <a class="btn btn-primary btn-large" href="/confs/new">Організувати нову конференцію</a>
+             </p>
+         </div>
+     </header>
+     
+     <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        <% confs.forEach(function(conf){ %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                   <img src="<%= conf.image %>">
+                   <div class="caption">
+                       <h4><%= conf.name %></h4>
+                   </div>
+                   <p>
+                       <a href="/confs/<%= conf._id %>" class="btn btn-primary">Детальніше</a>
+                   </p>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+<%- include("../partials/footer") %>
