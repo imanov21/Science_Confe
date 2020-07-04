@@ -1,0 +1,39 @@
+@media screen and (max-width: 992px) {
+	body{
+		font-size: 0.75rem;
+	}
+}
+
+.jumbotron {
+	color: white;
+	margin-top: 2em;
+	background-image: url(imgs/earth_pic.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-position: center;
+}
+
+@media screen and (min-width: 993px) {
+	.jumbotron {
+		margin-top: 2em;
+		background-image: url(imgs/earth_pic.jpg);
+		background-repeat: no-repeat;
+		background-size: 75% 100%;
+		background-position: center;
+	}
+}
+
+.card img {
+	object-fit: cover;
+
+	width: 100%;
+	height: 22em;
+}
+
+.cards{
+  	margin-bottom: 1.5rem !important;
+}
+
+div h1 {
+	font-size: 3rem;
+}
