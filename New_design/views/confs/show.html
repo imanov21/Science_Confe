@@ -12,6 +12,8 @@
 
     <link rel="stylesheet" type="text/css" href="../../public/stylesheets/main.css">
 
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
     <title>Science Confe</title>
   </head>
   <body>
@@ -43,92 +45,243 @@
         </div>
       </nav>
 
-      <!-- Jumbotron -->
-      <div class="container">
-        <div class="jumbotron text-center">
-          <h1 class="display-3 text-uppercase" id="jumbotron-h1">Ласкаво просимо на Science Confe!</h1>
-          <p>Перегляньте майбутні конференції з усього світу</p>
-          <a class="btn btn-outline-primary btn-lg text-capitalize" href="#" role="button">Організувати нову конференцію</a>
-        </div>
-      </div>
-        
-      <div class="container text-center">
+      <div class="container-fluid mt-5">
         <div class="row">
-              <!-- Card 1 -->
-              <div class="col-lg-4 cards">
+            <div class="col-md-3 mb-5">
+              <p class="lead">Science Conf</p>
+              <div class="list-group">
+                  <li class="list-group-item"><a href="#main_info">Основна інформація</a></li>
+                  <li class="list-group-item"><a href="#list">Список учасників</a></li>
+              </div>
+            </div>
+            <div class="col-md-6">
                 <div class="card">
-                  <img src="../../public/imgs/pattern1.jpeg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title text-capitalize"><i class="fas fa-paste"></i> first thing</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda corrupti quam magnam!
-                                Veniam, dolorum facere?
-                                Commodi, ut. Et, itaque quam!</p>
-                    <button type="button" class="btn btn-outline-primary">Детальніше</button>
+                  <img class="img-responsive" src="../../public/imgs/pattern1.jpeg">
+                  <div class="caption-full">
+                    <div class="row">
+                      <div class="col-12"> <!-- col-xs-12 -->
+                        <!-- <h3 id="conference-title"><a><%= conf.name %></a></h3> -->
+                        <h3 id="conference-title"><a>"Ім'я конференції"</a></h3>
+                        <hr>
+                        <div class="row">
+                          <div class="col-6">	<!-- col-xs-6 -->	
+                            <h4 class="pull-left" id="main_info">Веб-сайт конференції:</h4>
+                          </div>
+                          <div class="col-6">	<!-- col-xs-6 -->
+                            <!-- <h4 class="pull-right"><%= conf.website %></h4> -->
+                            <h4 class="pull-right">http://example.com</h4>
+                          </div>
+                        </div>
+                        <hr>
+                        <h4>Час і місце</h4>
+                        <hr>
+                        <div class="row">
+                          <div class="col-6">	 <!-- col-6 -->
+                            <h4>Дата початку конференції:</h4>
+                          </div>
+                          <div class="col-6">	<!-- col-6 -->
+                            <!-- <h4 class="pull-right"><%= conf.beginDate %></h4> -->
+                            <h4 class="pull-right">01.01.21</h4>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-6">	<!-- col-xs-6 -->
+                            <h4>Дата закінчення конференції:</h4>
+                          </div>
+                          <div class="col-6">	 <!-- col-xs-6 -->
+                            <!-- <h4 class="pull-right"><%= conf.endDate %></h4> -->
+                            <h4 class="pull-right">02.01.21</h4>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-6">	<!-- col-xs-6 -->
+                            <h4>Дата закінчення прийому документів до конференції:</h4>
+                          </div>
+                          <div class="col-6">	<!-- col-xs-6 -->
+                            <!-- <h4 class="pull-right"><%= conf.deadlineForDocs %></h4> -->
+                            <h4 class="pull-right">27.12.20</h4>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-6"> <!-- col-xs-6 -->	
+                            <h4>Місце проведення конференції:</h4>
+                          </div>
+                          <div class="col-6">	 <!-- col-xs-6 -->
+                            <!-- <h4 class="pull-right"><%= conf.location %></h4> -->
+                            <h4 class="pull-right">г.Харковь ул. Дажборская 25-Б</h4>
+                          </div>
+                        </div>
+                          <hr>
+                          <h4>Контакти</h4>
+                          <hr>
+                        <div class="row">
+                          <div class="col-6">	<!-- col-xs-6 -->
+                            <h4>Контактна особа:</h4>
+                          </div>
+                          <div class="col-6">	<!-- col-xs-6 -->
+                            <!-- <h4 class="pull-right"><%= conf.contactPerson %></h4> -->
+                            <h4 class="pull-right">Василь Петрончук</h4>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-6">	
+                            <h4>Адреса електронної пошти організації:</h4>
+                          </div>
+                          <div class="col-6">	
+                            <!-- <h4 class="pull-right"><%= conf.orgEmailAdress %></h4> -->
+                            <h4 class="pull-right">example@gmail.com</h4>
+                          </div>
+                        </div>
+                          <hr>
+                          <h4>Додаткова інформація</h4>
+                          <hr>
+                        <div class="row">
+                          <div class="col-6">	
+                            <h4>Організатори:</h4>
+                          </div>
+                          <div class="col-6">	
+                            <!-- <h4 class="pull-right"><%= conf.orgBy %></h4> -->
+                            <h4 class="pull-right">Science World</h4>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-6">	
+                            <h4>Теми:</h4>
+                          </div>
+                          <div class="col-6">	
+                            <!-- <h4 class="pull-right"><%= conf.topics %></h4> -->
+                            <h4 class="pull-right">Вища математика, рослиництво, хімія</h4>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-6">	
+                            <h4>Посилання на приклад:</h4>
+                          </div>
+                          <div class="col-6">	
+                            <!-- <h4 class="pull-right"><%= conf.linkToExample %></h4> -->
+                            <h4 class="pull-right">http://example.com</h4>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <hr>
+                    <h4>Опис</h4>
+                    <hr>
+                    <!-- <h4><%= conf.description %></h4> -->
+                    <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non aliquet ante. Duis id dolor non mauris aliquet lacinia eget sit amet libero. Maecenas a urna vitae massa dapibus luctus. Aenean fringilla lorem sit amet tellus malesuada euismod. Sed risus orci, interdum id purus faucibus, facilisis elementum metus. Quisque fringilla, nibh nec venenatis porta, massa nulla luctus erat, a vestibulum quam mauris sed dui. Aenean eu consequat elit. Curabitur finibus ultricies nulla nec dignissim.
+
+                      Sed at aliquam mauris, sit amet condimentum lacus. Etiam et fringilla justo. Vestibulum cursus nisl at metus tincidunt, eget consequat lorem scelerisque. Quisque scelerisque vel nibh eget ultricies. Maecenas eu lorem a diam venenatis pretium. Etiam fermentum, ligula et molestie venenatis, nibh sem volutpat neque, at tristique metus massa sed neque. Suspendisse eu felis quis dolor rutrum mollis et et sem.
+                      
+                      Duis consectetur urna rhoncus erat varius, id facilisis sem faucibus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In et scelerisque arcu. Sed sodales congue neque, sit amet vulputate nulla porttitor in. Phasellus ex felis, gravida in fermentum quis, vulputate quis sem. Phasellus consectetur eget leo in bibendum. Curabitur aliquet dignissim magna a vehicula. Donec non arcu viverra, elementum dui posuere, porta magna. Vivamus convallis ante quis placerat interdum. Vivamus tellus orci, aliquet id maximus ac, maximus ac sapien.</h4>
+                    <hr>
+                              <p class="text-center">
+                                  <!-- <em>Представлено <%= conf.author.username %></em> -->
+                                  <em>Представлено User1</em>
+                              </p>
+                    <hr>
+                              <!-- <% if(currentUser && conf.author.id.equals(currentUser._id)){ %> -->
+                                  <div class="d-flex justify-content-around">
+                                    <a class="btn btn-outline-warning" href="edit.html">Редагувати</a>
+                                    <form id="delete-form" action="index.html" method="POST">
+                                        <button class="btn btn-outline-danger">Відмінити</button>
+                                    </form>
+                                  </div>
+                                  
+                              <!-- <% }%> -->
+                    <!-- <% if(currentUser){ var allow = true; %>
+                    <% conf.participants.forEach(function(participant){ %>
+                    <% if(participant.author.id.equals(currentUser._id)){ allow = false;} else {}});} if (allow != true){%> -->
+                    <!-- <div class="text-right">
+                      <a class="btn btn-success" href="/confs/<%= conf._id %>/participants/new" style="display:none;">Зареєструйтесь на конференцію</a>
+                    </div>
+                    <% } else { %> -->
+                    <div>
+                      <hr>
+                      <div class="d-flex justify-content-center">
+                        <a class="btn btn-block btn-outline-success" href="../participant/new.html">Зареєструйтесь на конференцію</a>
+                      </div>
+                    </div>
+                    
+                    <!-- <% } %> -->
                   </div>
                 </div>
-              </div>
+          
+                
 
-              <!-- Card 2 -->
-              <div class="col-lg-4 cards">
-                <div class="card">
-                  <img src="../../public/imgs/pattern2.jpeg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title text-capitalize"><i class="fas fa-paste"></i> secound thing</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda corrupti quam magnam!
-                                Veniam, dolorum facere?
-                                Commodi, ut. Et, itaque quam!</p>
-                    <button type="button" class="btn btn-outline-primary">Детальніше</button>
+                <div class="card text-center mt-5">
+                  <div class="card-header">
+                    <h2 id="list">Список учасників конференції</h2>
                   </div>
-                </div>
-              </div>
+                  <!-- <% conf.participants.forEach(function(participant){ %> -->
+                  <div class="card-footer m-4"><h5>1. Учасник</h5></div>
+                  <div class="card-body pb-0">
+                      <h5 class="card-text">
+                        <div class="d-flex justify-content-between">
+                                <span>Повне ім'я:</span>
+                                <!-- <span class="pull-right"><strong><%= participant.name %></strong></span> -->
+                                <span><strong>Іван Григоровський</strong></span>
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-between">     
+                                    <span> Інтереси / теми для обговорення: </span>
+                                    <!-- <span class="pull-right"><%= participant.interests %></span> -->
+                                    <span class="text-right">Математика, Теорія ігор</span>           
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-end"><!--<% if(currentUser && participant.author.id.equals(currentUser._id)){ %>	 -->
+                          <a class="btn btn-sm btn-outline-warning mr-4" href="../participant/edit.html">Редагувати</a>
+                          <form id="delete-form" action="index.html" method="POST">
+                              <button class="btn btn-sm btn-outline-danger">Скасувати участь</button>
+                          </form>
+                        </div>         
+                      
+                      </h5>
+                  </div><!-- <% } %> -->
+                  <!-- <% }) %> -->
+                  <div class="card-footer m-4"><h5>2. Учасник</h5></div>
 
-              <!-- Card 3 -->
-              <div class="col-lg-4 cards">
-                <div class="card">
-                  <img src="../../public/imgs/pattern3.jpeg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title text-capitalize"><i class="fas fa-paste"></i> third thing</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda corrupti quam magnam!
-                                Veniam, dolorum facere?
-                                Commodi, ut. Et, itaque quam!</p>
-                    <button type="button" class="btn btn-outline-primary">Детальніше</button>
-                  </div>
+                  <div class="card-body pb-0">
+                      <h5 class="card-text">
+                        <div class="d-flex justify-content-between">
+                            <span>Повне ім'я:</span>
+                            <!-- <span class="pull-right"><strong><%= participant.name %></strong></span> -->
+                            <span><strong>Іван Григоровський</strong></span>
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-between">     
+                            <span> Інтереси / теми для обговорення: </span>
+                            <!-- <span class="pull-right"><%= participant.interests %></span> -->
+                            <span>Математика, Теорія ігор</span>           
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-end"><!--<% if(currentUser && participant.author.id.equals(currentUser._id)){ %>	 -->
+                          <a class="btn btn-sm btn-outline-warning mr-4" href="../participant/edit.html">Редагувати</a>
+                          <form id="delete-form" action="index.html" method="POST">
+                              <button class="btn btn-sm btn-outline-danger">Скасувати участь</button>
+                          </form>
+                        </div>         
+                      </h5>
+                    <div class="card-footer"></div>
+                  </div><!-- <% } %> -->
+                  <!-- <% }) %> -->   
                 </div>
-              </div>
-
-               <!-- Card 4 -->
-              <div class="col-lg-4 cards">
-                <div class="card">
-                  <img src="../../public/imgs/sprinkles.png" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title text-capitalize"><i class="fas fa-paste"></i> forth thing</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda corrupti quam magnam!
-                                Veniam, dolorum facere?
-                                Commodi, ut. Et, itaque quam!</p>
-                    <button type="button" class="btn btn-outline-primary">Детальніше</button>
-                  </div>
+            </div>
+                <div class="col-md-3">
                 </div>
-              </div>
-
-               <!-- Card 5 -->
-              <div class="col-lg-4 cards">
-                <div class="card">
-                  <img src="../../public/imgs/conf1.jpg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title text-capitalize"><i class="fas fa-paste"></i> five thing</h5>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda corrupti quam magnam!
-                                Veniam, dolorum facere?
-                                Commodi, ut. Et, itaque quam!</p>
-                    <button type="button" class="btn btn-outline-primary">Детальніше</button>
-                  </div>
-                </div>
-              </div>
-
         </div>
       </div>
+
+    <script>
+      $(".list-group-item").on("mouseenter", function(){
+        $(this).addClass("active");
+      });
+      $(".list-group-item").on("mouseleave", function(){
+        $(this).removeClass("active");
+      });
+    </script>
 
     <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
   </body>

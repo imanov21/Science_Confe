@@ -1,8 +1,9 @@
+
+
 @media screen and (max-width: 992px) {
 	body{
 		font-size: 0.75rem;
-	}
-	
+	}	
 }
 
 .jumbotron {
@@ -12,22 +13,19 @@
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	background-position: center;
-}
-
-@media screen and (min-width: 993px) {
-	.jumbotron {
-		margin-top: 2em;
-		background-image: url(../imgs/earth_pic.jpg);
-		background-repeat: no-repeat;
-		background-size: 75% 100%;
-		background-position: center;
-	}	
+	background-color: black;
 }
 
 @media screen and (max-width: 1200px) {
 	#jumbotron-h1{
 		font-size: 2rem;
 	}
+}
+
+.btn-outline-warning:hover {
+    color: #fff;
+    background-color: #ffc107;
+    border-color: #ffc107;
 }
 
 .card img {
@@ -38,7 +36,7 @@
 }
 
 .cards{
-  	margin-bottom: 1.5rem !important;
+	margin-bottom: 1.5rem !important;
 }
 
 div h1 {
