@@ -50,135 +50,103 @@
             <div class="col-md-3 mb-5">
               <p class="lead">Science Conf</p>
               <div class="list-group">
-                  <li class="list-group-item"><a href="#main_info">Основна інформація</a></li>
-                  <li class="list-group-item"><a href="#list">Список учасників</a></li>
+                  <li class="list-group-item"><a href="#main_info_anchor">Основна інформація</a></li>
+                  <li class="list-group-item"><a href="#list_anchor">Список учасників</a></li>
               </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-9 col-xl-7 show-text">
                 <div class="card">
-                  <img class="img-responsive" src="../../public/imgs/pattern1.jpeg">
+                  <img class="img-responsive" src="../../public/imgs/pattern1.jpeg" id="main_info_anchor">
                   <div class="caption-full">
                     <div class="row">
                       <div class="col-12"> <!-- col-xs-12 -->
-                        <!-- <h3 id="conference-title"><a><%= conf.name %></a></h3> -->
-                        <h3 id="conference-title"><a>"Ім'я конференції"</a></h3>
-                        <hr>
-                        <div class="row">
-                          <div class="col-6">	<!-- col-xs-6 -->	
-                            <h4 class="pull-left" id="main_info">Веб-сайт конференції:</h4>
-                          </div>
-                          <div class="col-6">	<!-- col-xs-6 -->
+                          <!-- <h3 id="conference-title"><a><%= conf.name %></a></h3> -->
+                          <h3 id="conference-title"><a>"Ім'я конференції"</a></h3>
+                          <hr class="text-hr">
+                          <div class="row d-flex justify-content-around">
+                            <div class="col-5"><span>Веб-сайт конференції:</span></div>
                             <!-- <h4 class="pull-right"><%= conf.website %></h4> -->
-                            <h4 class="pull-right">http://example.com</h4>
+                            <div class="col-6 col-sm-6"><span>http://example.com</span></div>
                           </div>
-                        </div>
-                        <hr>
-                        <h4>Час і місце</h4>
-                        <hr>
-                        <div class="row">
-                          <div class="col-6">	 <!-- col-6 -->
-                            <h4>Дата початку конференції:</h4>
-                          </div>
-                          <div class="col-6">	<!-- col-6 -->
+                          <hr class="header-hr">
+                          <span class="ml-2">Час і місце</span>
+                          <hr class="header-hr">
+                          <div class="row d-flex justify-content-around">
+                            <div class="col-5"><span>Дата початку конференції:</span></div>
                             <!-- <h4 class="pull-right"><%= conf.beginDate %></h4> -->
-                            <h4 class="pull-right">01.01.21</h4>
+                            <div class="col-6 col-sm-6"><span>01.01.21</span></div>
                           </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-6">	<!-- col-xs-6 -->
-                            <h4>Дата закінчення конференції:</h4>
-                          </div>
-                          <div class="col-6">	 <!-- col-xs-6 -->
+                          <hr class="text-hr">
+                          <div class="row d-flex justify-content-around">
+                            <div class="col-5"><span>Дата закінчення конференції:</span></div>
                             <!-- <h4 class="pull-right"><%= conf.endDate %></h4> -->
-                            <h4 class="pull-right">02.01.21</h4>
+                            <div class="col-6 col-sm-6"><span>02.01.21</span></div>
                           </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-6">	<!-- col-xs-6 -->
-                            <h4>Дата закінчення прийому документів до конференції:</h4>
-                          </div>
-                          <div class="col-6">	<!-- col-xs-6 -->
+                          <hr class="text-hr">
+                          <div class="row d-flex justify-content-around">
+                            <div class="col-5"><span>Дата закінчення прийому документів до конференції:</span></div>
                             <!-- <h4 class="pull-right"><%= conf.deadlineForDocs %></h4> -->
-                            <h4 class="pull-right">27.12.20</h4>
+                            <div class="col-6 col-sm-6"><span>27.12.20</span></div>
                           </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-6"> <!-- col-xs-6 -->	
-                            <h4>Місце проведення конференції:</h4>
-                          </div>
-                          <div class="col-6">	 <!-- col-xs-6 -->
+                          <hr class="text-hr">
+                          <div class="row d-flex justify-content-around">
+                            <div class="col-5"><span>Місце проведення конференції:</span></div>
                             <!-- <h4 class="pull-right"><%= conf.location %></h4> -->
-                            <h4 class="pull-right">г.Харковь ул. Дажборская 25-Б</h4>
+                            <div class="col-6 col-sm-6"><span>г.Харковь ул. Дажборская 25-Б</span></div>
                           </div>
-                        </div>
-                          <hr>
-                          <h4>Контакти</h4>
-                          <hr>
-                        <div class="row">
-                          <div class="col-6">	<!-- col-xs-6 -->
-                            <h4>Контактна особа:</h4>
-                          </div>
-                          <div class="col-6">	<!-- col-xs-6 -->
+                          <hr class="header-hr">
+                          <span class="ml-2">Контакти</span>
+                          <hr class="header-hr">
+                          <div class="row d-flex justify-content-around">
+                            <div class="col-5"><span>Контактна особа:</span></div>
                             <!-- <h4 class="pull-right"><%= conf.contactPerson %></h4> -->
-                            <h4 class="pull-right">Василь Петрончук</h4>
+                            <div class="col-6 col-sm-6"><span>Василь Петрончук</span></div>
                           </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-6">	
-                            <h4>Адреса електронної пошти організації:</h4>
-                          </div>
-                          <div class="col-6">	
+                          <hr class="text-hr">
+                          <div class="row d-flex justify-content-around">
+                            <div class="col-5"><span>Адреса електронної пошти організації:</span></div>
                             <!-- <h4 class="pull-right"><%= conf.orgEmailAdress %></h4> -->
-                            <h4 class="pull-right">example@gmail.com</h4>
+                            <div class="col-6 col-sm-6"><span>example@gmail.com</span></div>
                           </div>
-                        </div>
-                          <hr>
-                          <h4>Додаткова інформація</h4>
-                          <hr>
-                        <div class="row">
-                          <div class="col-6">	
-                            <h4>Організатори:</h4>
+                          <hr class="header-hr">
+                          <span class="ml-2">Додаткова інформація</span>
+                          <hr class="header-hr">
+                          <div class="row d-flex justify-content-around">
+                            <div class="col-5"><span>Організатори:</span></div>
+                            <!-- <h4 class="pull-right"><%= conf.orgEmailAdress %></h4> -->
+                            <div class="col-6 col-sm-6"><span>Science World</span></div>
                           </div>
-                          <div class="col-6">	
-                            <!-- <h4 class="pull-right"><%= conf.orgBy %></h4> -->
-                            <h4 class="pull-right">Science World</h4>
+                          <hr class="text-hr">
+                          <div class="row d-flex justify-content-around">
+                            <div class="col-5"><span>Теми:</span></div>
+                            <!-- <h4 class="pull-right"><%= conf.orgEmailAdress %></h4> -->
+                            <div class="col-6 col-sm-6"><span>Вища математика, рослиництво, хімія</span></div>
                           </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-6">	
-                            <h4>Теми:</h4>
-                          </div>
-                          <div class="col-6">	
-                            <!-- <h4 class="pull-right"><%= conf.topics %></h4> -->
-                            <h4 class="pull-right">Вища математика, рослиництво, хімія</h4>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-6">	
-                            <h4>Посилання на приклад:</h4>
-                          </div>
-                          <div class="col-6">	
+                          <hr class="text-hr">
+                          <div class="row d-flex justify-content-around">
+                            <div class="col-5"><span>Посилання на приклад:</span></div>
                             <!-- <h4 class="pull-right"><%= conf.linkToExample %></h4> -->
-                            <h4 class="pull-right">http://example.com</h4>
+                            <div class="col-6 col-sm-6"><span>http://example.com</span></div>
                           </div>
-                        </div>
                       </div>
                     </div>
-                    <hr>
-                    <h4>Опис</h4>
-                    <hr>
-                    <!-- <h4><%= conf.description %></h4> -->
-                    <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non aliquet ante. Duis id dolor non mauris aliquet lacinia eget sit amet libero. Maecenas a urna vitae massa dapibus luctus. Aenean fringilla lorem sit amet tellus malesuada euismod. Sed risus orci, interdum id purus faucibus, facilisis elementum metus. Quisque fringilla, nibh nec venenatis porta, massa nulla luctus erat, a vestibulum quam mauris sed dui. Aenean eu consequat elit. Curabitur finibus ultricies nulla nec dignissim.
+                    <hr class="header-hr">
+                    <span class="ml-2">Опис</span>
+                    <hr class="header-hr">
+                    <div class="row mx-2">
+                      <div class="col-12"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse non aliquet ante. Duis id dolor non mauris aliquet lacinia eget sit amet libero. Maecenas a urna vitae massa dapibus luctus. Aenean fringilla lorem sit amet tellus malesuada euismod. Sed risus orci, interdum id purus faucibus, facilisis elementum metus. Quisque fringilla, nibh nec venenatis porta, massa nulla luctus erat, a vestibulum quam mauris sed dui. Aenean eu consequat elit. Curabitur finibus ultricies nulla nec dignissim.
 
-                      Sed at aliquam mauris, sit amet condimentum lacus. Etiam et fringilla justo. Vestibulum cursus nisl at metus tincidunt, eget consequat lorem scelerisque. Quisque scelerisque vel nibh eget ultricies. Maecenas eu lorem a diam venenatis pretium. Etiam fermentum, ligula et molestie venenatis, nibh sem volutpat neque, at tristique metus massa sed neque. Suspendisse eu felis quis dolor rutrum mollis et et sem.
-                      
-                      Duis consectetur urna rhoncus erat varius, id facilisis sem faucibus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In et scelerisque arcu. Sed sodales congue neque, sit amet vulputate nulla porttitor in. Phasellus ex felis, gravida in fermentum quis, vulputate quis sem. Phasellus consectetur eget leo in bibendum. Curabitur aliquet dignissim magna a vehicula. Donec non arcu viverra, elementum dui posuere, porta magna. Vivamus convallis ante quis placerat interdum. Vivamus tellus orci, aliquet id maximus ac, maximus ac sapien.</h4>
-                    <hr>
+                        Sed at aliquam mauris, sit amet condimentum lacus. Etiam et fringilla justo. Vestibulum cursus nisl at metus tincidunt, eget consequat lorem scelerisque. Quisque scelerisque vel nibh eget ultricies. Maecenas eu lorem a diam venenatis pretium. Etiam fermentum, ligula et molestie venenatis, nibh sem volutpat neque, at tristique metus massa sed neque. Suspendisse eu felis quis dolor rutrum mollis et et sem.
+                        
+                        Duis consectetur urna rhoncus erat varius, id facilisis sem faucibus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In et scelerisque arcu. Sed sodales congue neque, sit amet vulputate nulla porttitor in. Phasellus ex felis, gravida in fermentum quis, vulputate quis sem. Phasellus consectetur eget leo in bibendum. Curabitur aliquet dignissim magna a vehicula. Donec non arcu viverra, elementum dui posuere, porta magna. Vivamus convallis ante quis placerat interdum. Vivamus tellus orci, aliquet id maximus ac, maximus ac sapien.</span></div>
+                    </div>
+                    <!-- <h4><%= conf.description %></h4> -->
+                    <hr class="text-hr">
                               <p class="text-center">
                                   <!-- <em>Представлено <%= conf.author.username %></em> -->
                                   <em>Представлено User1</em>
                               </p>
-                    <hr>
+                    <hr class="text-hr">
                               <!-- <% if(currentUser && conf.author.id.equals(currentUser._id)){ %> -->
                                   <div class="d-flex justify-content-around">
                                     <a class="btn btn-outline-warning" href="edit.html">Редагувати</a>
@@ -196,9 +164,9 @@
                     </div>
                     <% } else { %> -->
                     <div>
-                      <hr>
+                      <hr class="text-hr">
                       <div class="d-flex justify-content-center">
-                        <a class="btn btn-block btn-outline-success" href="../participant/new.html">Зареєструйтесь на конференцію</a>
+                        <a class="btn btn-block btn-outline-success" href="../participant/new.html" id="list_anchor">Зареєструйтесь на конференцію</a>
                       </div>
                     </div>
                     
@@ -210,63 +178,61 @@
 
                 <div class="card text-center mt-5">
                   <div class="card-header">
-                    <h2 id="list">Список учасників конференції</h2>
+                    <h2>Список учасників конференції</h2>
                   </div>
                   <!-- <% conf.participants.forEach(function(participant){ %> -->
                   <div class="card-footer m-4"><h5>1. Учасник</h5></div>
                   <div class="card-body pb-0">
-                      <h5 class="card-text">
-                        <div class="d-flex justify-content-between">
-                                <span>Повне ім'я:</span>
+                      <div class="participation-text">
+                        <div class="row d-flex justify-content-between">
+                                <div class="col-5"><span class="no-break">Повне ім'я:</span></div>
                                 <!-- <span class="pull-right"><strong><%= participant.name %></strong></span> -->
-                                <span><strong>Іван Григоровський</strong></span>
+                                <div class="col-6 col-sm-6 font-weight-bold"><span class="no-break">Іван Григоровський</span></div>
                         </div>
-                        <hr>
-                        <div class="d-flex justify-content-between">     
-                                    <span> Інтереси / теми для обговорення: </span>
-                                    <!-- <span class="pull-right"><%= participant.interests %></span> -->
-                                    <span class="text-right">Математика, Теорія ігор</span>           
+                        <hr class="text-hr">
+                        <div class="row d-flex justify-content-between">     
+                                <div class="col-5 col-sm-5 participation-interests">Інтереси/Теми для обговорення:</div>
+                                <!-- <span class="pull-right"><%= participant.interests %></span> -->
+                                <div class="col-6 col-sm-6">Математика, Теорія ігор</div>          
                         </div>
-                        <hr>
+                        <hr class="text-hr">
                         <div class="d-flex justify-content-end"><!--<% if(currentUser && participant.author.id.equals(currentUser._id)){ %>	 -->
                           <a class="btn btn-sm btn-outline-warning mr-4" href="../participant/edit.html">Редагувати</a>
                           <form id="delete-form" action="index.html" method="POST">
                               <button class="btn btn-sm btn-outline-danger">Скасувати участь</button>
                           </form>
-                        </div>         
-                      
-                      </h5>
+                        </div>           
+                      </div>
+                      <hr class="text-hr">
                   </div><!-- <% } %> -->
                   <!-- <% }) %> -->
                   <div class="card-footer m-4"><h5>2. Учасник</h5></div>
-
                   <div class="card-body pb-0">
-                      <h5 class="card-text">
-                        <div class="d-flex justify-content-between">
-                            <span>Повне ім'я:</span>
-                            <!-- <span class="pull-right"><strong><%= participant.name %></strong></span> -->
-                            <span><strong>Іван Григоровський</strong></span>
+                    <div class="participation-text">
+                        <div class="row d-flex justify-content-between">
+                                <div class="col-5"><span class="no-break">Повне ім'я:</span></div>
+                                <!-- <span class="pull-right"><strong><%= participant.name %></strong></span> -->
+                                <div class="col-6 col-sm-6 font-weight-bold"><span class="no-break">Іван Григоровський</span></div>
                         </div>
-                        <hr>
-                        <div class="d-flex justify-content-between">     
-                            <span> Інтереси / теми для обговорення: </span>
-                            <!-- <span class="pull-right"><%= participant.interests %></span> -->
-                            <span>Математика, Теорія ігор</span>           
+                        <hr class="text-hr">
+                        <div class="row d-flex justify-content-between">     
+                                <div class="col-5 col-sm-5 participation-interests">Інтереси/Теми для обговорення:</div>
+                                <!-- <span class="pull-right"><%= participant.interests %></span> -->
+                                <div class="col-6 col-sm-6">Математика, Теорія ігор</div>          
                         </div>
-                        <hr>
+                        <hr class="text-hr">
                         <div class="d-flex justify-content-end"><!--<% if(currentUser && participant.author.id.equals(currentUser._id)){ %>	 -->
                           <a class="btn btn-sm btn-outline-warning mr-4" href="../participant/edit.html">Редагувати</a>
                           <form id="delete-form" action="index.html" method="POST">
                               <button class="btn btn-sm btn-outline-danger">Скасувати участь</button>
                           </form>
-                        </div>         
-                      </h5>
-                    <div class="card-footer"></div>
-                  </div><!-- <% } %> -->
-                  <!-- <% }) %> -->   
+                        </div>           
+                      </div>
+                      <hr class="text-hr">
+                  </div>   
                 </div>
             </div>
-                <div class="col-md-3">
+                <div class="col-xl-3">
                 </div>
         </div>
       </div>
