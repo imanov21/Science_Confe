@@ -1,264 +1,213 @@
-
 @media screen and (max-width: 992px) {
-	body{
-		font-size: 1rem;
-	}	
+  body {
+    font-size: 1rem;
+  }
 }
+
 /* hr between simple notation */
+
 .text-hr {
-    border: 0;
-    height: 1px;
-    background: #333;
-    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+  border: 0;
+  height: 1px;
+  background: #333;
+  background-image: linear-gradient(to right, #ccc, #333, #ccc);
 }
 
 /* hr between headers */
 
 .header-hr {
-    overflow: visible; /* For IE */
-    padding: 0;
-    border: none;
-    border-top: medium double lightskyblue;
-    color: lightskyblue;
-    text-align: center;
+  overflow: visible;
+  /* For IE */
+  padding: 0;
+  border: none;
+  border-top: medium double lightskyblue;
+  color: lightskyblue;
+  text-align: center;
 }
+
 .header-hr:after {
-    display: inline-block;
-    position: relative;
-    top: -0.7em;
-    font-size: 1.5em;
-    padding: 0 0.25em;
-    background: white;
+  display: inline-block;
+  position: relative;
+  top: -0.7em;
+  font-size: 1.5em;
+  padding: 0 0.25em;
+  background: white;
 }
 
 @media screen and (min-width: 850px) {
-	.participation-interests{
-		white-space: nowrap;
-		word-break: keep-all;
-	}	
+  .participation-interests {
+    white-space: nowrap;
+    word-break: keep-all;
+  }
 }
 
-.no-break{
-	white-space: nowrap;
+.no-break {
+  /* white-space: nowrap; */
+  overflow-wrap: normal;
+  overflow-y: hidden;
+  overflow-x: scroll;
 }
 
 @media screen and (max-width: 992px) {
-	.show-text{
-		font-size: 1.3rem;
-		margin-bottom: .5rem;
-		font-weight: 500;
-		line-height: 1.2;
-	}
+  .show-text {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+  }
 
-	.main-text{
-		font-size: 1rem;
-		margin-bottom: .5rem;
-		font-weight: 500;
-		line-height: 1.2;
-	}
+  .main-text {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+  }
 }
 
 @media screen and (min-width: 992px) {
-	.show-text{
-		font-size: 1.5rem;
-		margin-bottom: .5rem;
-		font-weight: 500;
-		line-height: 1.2;
-	}
+  .show-text {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+  }
 
-	.main-text{
-		font-size: 1rem;
-		margin-bottom: .5rem;
-		font-weight: 500;
-		line-height: 1.2;
-	}
+  .main-text {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+  }
 }
 
 .jumbotron {
-	color: white;
-	margin-top: 2em;
-	background-image: url(../imgs/earth_pic.jpg);
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
-	background-position: center;
-	background-color: black;
+  color: white;
+  margin-top: 2em;
+  background-image: url(../imgs/earth_pic.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  background-color: black;
 }
 
 @media screen and (max-width: 1200px) {
-	#jumbotron-h1{
-		font-size: 2rem;
-	}
+  #jumbotron-h1 {
+    font-size: 2rem;
+  }
 }
 
 .btn-outline-warning:hover {
-    color: #fff;
-    background-color: #ffc107;
-    border-color: #ffc107;
+  color: #fff;
+  background-color: #ffc107;
+  border-color: #ffc107;
 }
 
 .card img {
-	object-fit: cover;
+  object-fit: cover;
 
-	width: 100%;
-	height: 22em;
+  width: 100%;
+  height: 22em;
 }
 
-.cards{
-	margin-bottom: 1.5rem !important;
+.cards {
+  margin-bottom: 1.5rem !important;
 }
 
 div h1 {
-	font-size: 3rem;
+  font-size: 3rem;
 }
 
 #delete-form {
-    display: inline;
+  display: inline;
 }
 
 footer {
-	text-align: center;
+  text-align: center;
 }
 
 #conference-title {
-	text-align: center;
+  text-align: center;
 }
 
-#list{
-	text-align:center;
+#list {
+  text-align: center;
 }
 
-.list-group-item:active,.list-group-item:active:focus,.list-group-item.active:hover a {
-	color: black;
+.list-group-item:active,
+.list-group-item:active:focus,
+.list-group-item.active:hover a {
+  color: black;
 }
 
 .participantion {
-	margin: 1em 1em;
-	border: 1px solid #919BA4;
+  margin: 1em 1em;
+  border: 1px solid #919ba4;
 }
 
-.login-form {
-	width: 340px;
+.login-form { /* поменять везде login-form на form-primary */
+  width: 340px;
+  margin: 50px auto;
+}
+
+.form-primary { 
+  width: 60%;
+  margin: 20px auto;
+}
+
+.participation-text {
+  font-size: 1.25rem;
+}
+
+@media screen and (max-width: 350px) {
+  .login-form {
+    width: 75%;
     margin: 50px auto;
-}
+  }
 
-.login-form form {
-    margin-bottom: 15px;
-    background: #f7f7f7;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    padding: 30px;
-}
-
-.login-form h2 {
-    margin: 0 0 15px;
+  .h2,
+  h2 {
+    font-size: 1.2em;
+  }
 }
 
 .form-control, .btn {
-    min-height: 38px;
-    border-radius: 2px;
+  min-height: 38px;
+  border-radius: 2px;
 }
 
-.btn {          
-	font-size: 15px;   
-	font-weight: bold;
+.btn {
+  font-size: 15px;
+  font-weight: bold;
 }
 
-.participation-text{
-	font-size: 1.25rem;
+@media screen and (max-width: 500px) {
+  .form-primary {
+    width: 100%;
+    margin: 20px auto;
+  }
+
+  .form-primary input::placeholder{
+    font-size: 0.8rem;
+  }
+
+  .card img {
+    height: 12em;
+  }
+
+  .participation-text {
+    font-size: 1rem;
+  }
+
 }
 
-/* form css */
-
-.form{
-	background:#f1f1f1; 
-	width:470px; 
-	margin:0 auto; 
-	padding-left:50px; 
-	padding-top:20px;
+.bg-lw {
+  background: #f7f7f7;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  /* padding: 30px; */
 }
 
-.form p.contact { 
-	font-size: 12px; 
-	margin:0px 0px 10px 0;
-	line-height: 14px; 
-	font-family:Arial, Helvetica;
+.participation-item div{
+  background: #f7f7f7;
 }
 
-.form input[type="text"] {
-	 width: 400px; 
-	}
 
-.form input[type="email"] { 
-	width: 400px;
- }
-
-.form label { 
-	color: #000;
-	font-weight:bold;
-	font-size: 12px;
-	font-family:Arial, Helvetica;
-}
-
-.form input, textarea { 
-	background-color: rgba(255, 255, 255, 0.4);
-	border: 1px solid rgba(122, 192, 0, 0.15);
-	padding: 7px; font-family: Keffeesatz, Arial; 
-	color: #4b4b4b; font-size: 14px;
-	-webkit-border-radius: 5px;
-	margin-bottom: 15px;
-	margin-top: -10px; 
-}
-
-.form input:focus, textarea:focus { 
-	border: 1px solid #ff5400; 
-	background-color: rgba(255, 255, 255, 1); 
-}
-
-.form .select-style {
-  -webkit-appearance: button;
-  -webkit-border-radius: 2px;
-  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-  -webkit-padding-end: 20px;
-  -webkit-padding-start: 2px;
-  -webkit-user-select: none;
-  background-image: url(../imgs/select-arrow.png), 
-    -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
-  background-position: center right;
-  background-repeat: no-repeat;
-  border: 0px solid #FFF;
-  color: #555;
-  font-size: inherit;
-  margin: 0;
-  overflow: hidden;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.form .confirmation {
-  width:410px;
-}
-
-.form input.buttom{ 
-	background: #4b8df9; 
-	display: inline-block; 
-	padding: 5px 10px 6px; 
-	color: #fbf7f7; 
-	text-decoration: none; 
-	font-weight: bold;
-	 line-height: 1; 
-	 -moz-border-radius: 5px; 
-	 -webkit-border-radius: 5px; 
-	 border-radius: 5px; 
-	 -moz-box-shadow: 0 1px 3px #999; 
-	 -webkit-box-shadow: 0 1px 3px #999; 
-	 box-shadow: 0 1px 3px #999; 
-	 text-shadow: 0 -1px 1px #222; 
-	 border: none; position: relative; 
-	 cursor: pointer; font-size: 14px;
-	  font-family:Verdana, Geneva, sans-serif;
-}
-
-.form input.buttom:hover	{ 
-	background-color: #2a78f6; 
-}
