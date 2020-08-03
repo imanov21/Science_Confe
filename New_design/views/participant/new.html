@@ -48,9 +48,9 @@
   </nav>
 
   <div class="container mt-3">
-    <h2 class="text-center">Реєстраційна форма для "Назва конференції"</h2>
+    <h2 class="text-center">Реєстраційна форма для <%= conf.name %></h2>
     <div class="form-primary">
-      <form action="index.html" method="POST">
+      <form action="/confs/<%= conf._id %>/participants" method="POST">
         <div class="mb-3">
           <label>Ваше повне ім'я</label>
           <input class="form-control" type="text" name="participant[name]" placeholder="повне ім'я">
@@ -86,7 +86,7 @@
         <div class="mb-3">
           <button type="submit" class="btn btn-outline-primary btn-block">Прийняти!</button>
         </div>
-        <p class="text-center"><a href="../confs/show.html" class="btn btn-outline-primary btn-block">Повернутися</a>
+        <p class="text-center"><a href="/confs" class="btn btn-outline-primary btn-block">Повернутися</a>
         </p>
       </form>
     </div>
