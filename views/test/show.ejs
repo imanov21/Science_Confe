@@ -1,62 +1,68 @@
 <%- include("../partials/header") %>
-<div class="container">
-    <div class="row">
-        <div class="col-md-2">
-        </div>
-        <div class="col-md-8">
-            <div class="thumbnail">
-                <div class="caption-full">
-                    <h3 style="text-align: center;"><a>Результат опитування до конференції <%= test.conf.name %></a></h3>
-					<hr>
-					<h4>Імя відправника:</h4>
-					<hr>
-					<p>
-					<%= test.name %>
-					</p>
-					<hr>
-					<h4>Бажана дата для проведення конференцій:</h4>
-					<hr>
-					<p>
-						<%= test.confDate %>
-					</p>
-					<hr>
-					<h4>Бажана тривалість конференції:</h4>
-					<hr>
-					<p>
-						<%= test.confDuration %>
-					</p>
-					<hr>
-					<h4>Бажане місце для конференції:</h4>
-					<hr>
-					<p>
-						<%= test.condLocation %>
-					</p>
-					<hr>
-					<h4>Учасник готовий підтримати організатора:</h4>
-					<hr>
-					<p>
-						<%= test.confDonate %>
-					</p>
-					<hr>
-					<h4>Бажана програма для конференції:</h4>
-					<hr>
-					<p>
-						<%= test.confProgram %>
-					</p>
-					<hr>
-					<h4>Учасник вважає за потрібне покращити:</h4>
-					<hr>
-					<p>
-						<%= test.opinion %>
-					</p>
-                    <p>
-                        <em>Submitted By <%= test.sender.username %></em>
-                    </p>
-                </div>
+  <div class="mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6 show-text">
+        <div class="card bg-lw p-2">
+          <div class="caption-full">
+            <h2 class="text-center">
+              <a>Результат опитування до конференції <%= test.conf.name %></a>
+            </h2>
+
+            <hr class="header-hr">
+            <span class="ml-2">Імя відправника:</span>
+            <hr class="header-hr">
+            <div class="row main-text ml-2">
+              <span> <%= test.name %></span>
             </div>
+
+            <hr class="header-hr">
+            <span class="ml-2">Бажана дата для проведення конференцій:</span>
+            <hr class="header-hr">
+            <div class="row main-text ml-2">
+              <span> <%= test.confDate %></span>
+            </div>
+
+            <hr class="header-hr">
+            <span class="ml-2">Бажана тривалість конференції:</span>
+            <hr class="header-hr">
+            <div class="row main-text ml-2">
+              <span><%= test.confDuration %></span>
+            </div>
+
+            <hr class="header-hr">
+            <span class="ml-2">Бажане місце для конференції:</span>
+            <hr class="header-hr">
+            <div class="row main-text ml-2">
+              <span><%= test.condLocation %></span>
+            </div>
+
+            <hr class="header-hr">
+            <span class="ml-2">Учасник готовий підтримати організатора:</span>
+            <hr class="header-hr">
+            <div class="row main-text ml-2">
+              <span><%= test.confDonate %></span>
+            </div>
+
+            <hr class="header-hr">
+            <span class="ml-2">Бажана програма для конференції:</span>
+            <hr class="header-hr">
+            <div class="row main-text ml-2">
+              <span><%= test.confProgram %></span>
+            </div>
+
+            <hr class="header-hr">
+            <span class="ml-2">Учасник вважає за потрібне покращити:</span>
+            <hr class="header-hr">
+            <div class="row main-text ml-2">
+              <span><%= test.opinion %></span>
+            </div>
+            <hr class="header-hr">
+            <p class="text-center main-text">
+              <em>Надіслано від <%= test.sender.username %></em>
+            </p>
+          </div>
         </div>
-		<div class="col-md-2">
-        </div>
+      </div>
     </div>
-</div>
+  </div>
 <%- include("../partials/footer") %>

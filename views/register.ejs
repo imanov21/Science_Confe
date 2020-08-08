@@ -1,5 +1,21 @@
 <%- include("partials/header") %>
-<div class="login-form">
+<div class="login-form bg-lw p-4">
+	<form action="/register" method="post">
+	  <h2 class="text-center mb-3">Реєстрація</h2>
+	  <div class="form-group">
+		<input type="text" class="form-control" name="username" placeholder="Логін" required="required">
+	  </div>
+	  <div class="form-group">
+		<input type="password" class="form-control" name="password" placeholder="Пароль" required="required">
+	  </div>
+	  <div class="form-group">
+		<button type="submit" class="btn btn-outline-primary btn-block">Зареєструватися</button>
+	  </div>
+	  <p class="text-center"><a href="/confs" class="btn btn-outline-primary btn-block">Повернутися</a></p>
+	</form>
+</div>
+
+<!-- <div class="login-form">
     <form action="/register" method="post">
         <h2 class="text-center">Реєстрація</h2>       
         <div class="form-group">
@@ -13,5 +29,5 @@
         </div>
 		<p class="text-center"><a href="/confs">Повернутися</a></p>
     </form>
-</div>
+</div> -->
 <%- include("partials/footer") %>

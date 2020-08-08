@@ -80,6 +80,7 @@ router.post("/",middleware.isLoggedIn,function(req, res){
 		} else {
 		   Participant.create(newParticipant, function(err, participant){
 			   if(err){
+				    req.flash("error", "Щось пішло не так");
 					console.log(err);
 			   } else {
 				  //add username and id to participation
@@ -99,6 +100,7 @@ router.post("/",middleware.isLoggedIn,function(req, res){
 							console.log(test);
 						}
 					});
+				  req.flash("success", "Вас успішно зареєстровано як учасника");
 				  res.redirect('/confs/' + conf._id);
 				}
 			});
@@ -108,13 +110,20 @@ router.post("/",middleware.isLoggedIn,function(req, res){
 
 // PARTICIPATION EDIT ROUTE
 router.get("/:participant_id/edit", middleware.checkParticipantOwnership, function(req, res){
-   Participant.findById(req.params.participant_id, function(err, foundParticipant){
-      if(err){
-          res.redirect("back");
-      } else {
-        res.render("participant/edit", {conf_id: req.params.id, participant: foundParticipant});
-      }
-   });
+   Conf.findById(req.params.id, function(err, foundConf){
+	   if(err || !foundConf){
+		   req.flash("error", "Не знайдено такої конференції");
+		   return res.redirect("back");
+	   }
+	   
+	   Participant.findById(req.params.participant_id, function(err, foundParticipant){
+		  if(err){
+			  res.redirect("back");
+		  } else {
+			res.render("participant/edit", {conf_id: req.params.id, participant: foundParticipant});
+		  }
+	   });
+   }); 
 });
 
 // PARTICIPATION UPDATE
@@ -135,6 +144,7 @@ router.delete("/:participant_id", middleware.checkParticipantOwnership, function
 		   console.log(err);
            res.redirect("back");
        } else {
+		   req.flash("success", "Вас успішно знято з участі у конференції");
            res.redirect("/confs/" + req.params.id);
        }
     });

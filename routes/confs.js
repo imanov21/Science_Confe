@@ -74,8 +74,10 @@ router.get("/new", middleware.isLoggedIn, function(req, res){
 // SHOW - shows more info about one confence
 router.get("/:id", function(req, res){
     Conf.findById(req.params.id).populate("participants").exec(function(err, foundConf){
-        if(err){
+        if(err || !foundConf){
             console.log(err);
+			req.flash("error", "Конференцію не знайдено");
+			res.redirect("back");
         } else {
             console.log(foundConf)
             res.render("confs/show", {conf: foundConf});
@@ -86,7 +88,15 @@ router.get("/:id", function(req, res){
 // EDIT CONFERENCE ROUTE
 router.get("/:id/edit", middleware.checkConfOwnership, function(req, res){
     Conf.findById(req.params.id, function(err, foundConf){
-        res.render("confs/edit", {conf: foundConf});
+		if(err || !foundConf){
+		   console.log(err);
+		   req.flash("error", "Конференцію не знайдено");
+		   res.redirect("back");
+	    } else {
+            console.log(foundConf)
+			req.flash("success","Успішно відредаговано");
+			res.render("confs/edit", {conf: foundConf});
+        }    
     });
 });
 
@@ -105,8 +115,11 @@ router.put("/:id",middleware.checkConfOwnership, function(req, res){
 router.delete("/:id",middleware.checkConfOwnership, function(req, res){
    Conf.findByIdAndRemove(req.params.id, function(err){
       if(err){
+		  console.log(err);
+		  req.flash("error", "Не вдалося відмінити конференцію");
           res.redirect("/confs");
       } else {
+		  req.flash("success", "Конференцію успішно скасовано");
           res.redirect("/confs");	  
       }
    });

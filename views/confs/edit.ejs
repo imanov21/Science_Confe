@@ -1,67 +1,67 @@
 <%- include("../partials/header") %>
-<div class="container">
-    <div class="row">
-        <h1 style="text-align: center">Відредагувати <%= conf.name %></h1>
-        <div style="width: 30%; margin: 25px auto;">
-            <form action="/confs/<%= conf._id %>?_method=PUT" method="POST">
-                <div class="form-group">
-					<label>Назва конференції</label>
-                    <input class="form-control" type="text" name="conf[name]" value="<%= conf.name %>">
-                </div>
-                <div class="form-group">
-					<label>Фотографія конференції</label>
-                    <input class="form-control" type="text" name="conf[image]" value="<%= conf.image %>">
-                </div>
-				<div class="form-group">
-					<label>Веб-сайт конференції</label>
-                    <input class="form-control" type="text" name="conf[website]" value="<%= conf.website %>">
-                </div>
-				<div class="form-group">
-					<label>Дата початку конференції</label>
-                    <input class="form-control" type="text" name="conf[beginDate]" value="<%= conf.beginDate %>">
-                </div>
-				<div class="form-group">
-					<label>Дата закінчення конференції</label>
-                    <input class="form-control" type="text" name="conf[endDate]" value="<%= conf.endDate %>">
-                </div>
-				<div class="form-group">
-					<label>Дата закінчення прийому документів до конференції</label>
-                    <input class="form-control" type="text" name="conf[deadlineForDocs]" value="<%= conf.deadlineForDocs %>">
-                </div>
-				<div class="form-group">
-					<label>Місце проведення конференції</label>
-                    <input class="form-control" type="text" name="conf[location]" value="<%= conf.location %>">
-                </div>
-				<div class="form-group">
-					<label>Контактна особа</label>
-                    <input class="form-control" type="text" name="conf[contactPerson]" value="<%= conf.contactPerson %>">
-                </div>
-				<div class="form-group">
-					<label>Адреса електронної пошти організації</label>
-                    <input class="form-control" type="text" name="conf[orgEmailAdress]" value="<%= conf.orgEmailAdress %>">
-                </div>
-				<div class="form-group">
-					<label>Ким організовано?</label>
-                    <input class="form-control" type="text" name="conf[orgBy]" value="<%= conf.orgBy %>">
-                </div>
-				<div class="form-group">
-					<label>Тема(и)</label>
-                    <input class="form-control" type="text" name="conf[topics]" value="<%= conf.topics %>">
-                </div>
-				<div class="form-group">
-					<label>Посилання на приклад</label>
-                    <input class="form-control" type="text" name="conf[linkToExample]" value="<%= conf.linkToExample %>">
-                </div>
-                <div class="form-group">
-					<label>Опис</label>
-                    <input class="form-control" type="text" name="conf[description]" value="<%= conf.description %>">
-                </div>
-                <div class="form-group">
-                    <button class="btn btn-lg btn-primary btn-block">Прийняти!</button>
-                </div>
-            </form>
-            <a href="/confs">Повернутися</a>
-        </div>
-    </div>
+<div class="container mt-3">
+	<h2 class="text-center">Відредагувати <%= conf.name %></h2>
+	<div class="form-primary">
+	  <form action="/confs/<%= conf._id %>?_method=PUT" method="POST">
+		<div class="mb-3">
+		  <label for="name">Назва конференції</label>
+		  <input class="form-control" type="text" name="conf[name]" value="<%= conf.name %>" placeholder="Назва" required="required">
+		</div>
+		<div class="mb-3">
+		  <label>Фотографія конференції</label>
+		  <input class="form-control" type="text" name="conf[image]" value="<%= conf.image %>" placeholder="URL-адреса зображення">
+		</div>
+		<div class="mb-3">
+		  <label>Веб-сайт конференції</label>
+		  <input class="form-control" type="text" name="conf[website]" value="<%= conf.website %>" placeholder="Веб-сайт конференції">
+		</div>
+		<div class="mb-3">
+		  <label>Дата початку конференції</label>
+		  <input class="form-control" type="text" name="conf[beginDate]" value="<%= conf.beginDate %>" placeholder="Дата початку">
+		</div>
+		<div class="mb-3">
+		  <label>Дата закінчення конференції</label>
+		  <input class="form-control" type="text" name="conf[endDate]" value="<%= conf.endDate %>" placeholder="Дата закінчення конференції">
+		</div>
+		<div class="mb-3">
+		  <label>Дата закінчення прийому документів до конференції</label>
+		  <input class="form-control" type="text" name="conf[deadlineForDocs]" value="<%= conf.deadlineForDocs %>" placeholder="Дата закінчення для документів">
+		</div>
+		<div class="mb-3">
+		  <label>Місце проведення конференції</label>
+		  <input class="form-control" type="text" name="conf[location]" value="<%= conf.location %>" placeholder="Місце проведення">
+		</div>
+		<div class="mb-3">
+		  <label>Контактна особа</label>
+		  <input class="form-control" type="text" name="conf[contactPerson]" value="<%= conf.contactPerson %>" placeholder="Контактна особа">
+		</div>
+		<div class="mb-3">
+		  <label>Адреса електронної пошти організації</label>
+		  <input class="form-control" type="text" name="conf[orgEmailAdress]" value="<%= conf.orgEmailAdress %>" placeholder="Адреса електронної пошти">
+		</div>
+		<div class="mb-3">
+		  <label>Ким організовано?</label>
+		  <input class="form-control" type="text" name="conf[orgBy]" value="<%= conf.orgBy %>" placeholder="Організатори">
+		</div>
+		<div class="mb-3">
+		  <label>Тема(и)</label>
+		  <input class="form-control" type="text" name="conf[topics]" value="<%= conf.topics %>" placeholder="Тема конференції">
+		</div>
+		<div class="mb-3">
+		  <label>Посилання на приклад</label>
+		  <input class="form-control" type="text" name="conf[linkToExample]" value="<%= conf.linkToExample %>" placeholder="URL-адреса прикладу">
+		</div>
+		<div class="mb-3">
+		  <label>Опис</label>
+		  <textarea class="form-control" name="conf[description]" rows="4" cols="33"
+			placeholder="Опис конференції"><%= conf.description %></textarea>
+		  <!-- <input class="form-control" type="text" name="description" placeholder="опис конференції"> -->
+		</div>
+		<div class="mb-3">
+		  <button type="submit" class="btn btn-outline-primary btn-block">Прийняти!</button>
+		</div>
+		<p class="text-center"><a href="/" class="btn btn-outline-primary btn-block">Повернутися</a></p>
+	  </form>
+	</div>
 </div>
 <%- include("../partials/footer") %>
