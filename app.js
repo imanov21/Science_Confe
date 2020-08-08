@@ -15,9 +15,8 @@ var express     = require("express"),
 var participantRoutes    = require("./routes/participants"),
     confRoutes = require("./routes/confs"),
     indexRoutes      = require("./routes/index")
-    
-
-mongoose.connect("mongodb://localhost:27017/sf_db", { 
+   
+mongoose.connect("mongodb+srv://devantony:topcodeR37@cluster0.e1xol.mongodb.net/sc_db?retryWrites=true&w=majority", { 
 	useUnifiedTopology: true,                         
 	useNewUrlParser: true,                            
 })
@@ -25,6 +24,15 @@ mongoose.connect("mongodb://localhost:27017/sf_db", {
 .catch(err => {
 console.log("DB Connection Error: " + err.message);
 });
+
+// mongoose.connect("mongodb://localhost:27017/sf_db", { 
+// 	useUnifiedTopology: true,                         
+// 	useNewUrlParser: true,                            
+// })
+// .then(() => console.log('DB Connected!'))
+// .catch(err => {
+// console.log("DB Connection Error: " + err.message);
+// });
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");

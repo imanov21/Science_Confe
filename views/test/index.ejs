@@ -6,27 +6,27 @@
 			<% if(currentUser && conf.author.id.equals(currentUser._id)){ %>
 				<% if (conf.testResults.length > 0) { %>
 					<% conf.testResults.forEach(function(testResult){ %>
-					  <div class="col-sm-6 col-md-4 col-lg-3 my-3">
+					<div class="col-sm-6 col-md-4 col-lg-3 my-3">
 						<div class="card bg-lw p-0">
-						  <div class="caption">
-							<h4>Результати до конференції </h4>
-							<hr class="text-hr">
-							<h4><%= conf.name %></h4>
-						  </div>
-						  <hr class="text-hr">
-						  <p>
-							<a>Відправленно <%= testResult.sender.username %></a>
-						  </p>
-						  <hr class="text-hr">
-						  <p>
-							<a href="/test/<%= testResult._id %>" class="btn btn-outline-primary">Детальніше</a>
-						  </p>
+							  <div class="caption">
+								<h4>Результати до конференції </h4>
+								<hr class="text-hr">
+								<h4><%= conf.name %></h4>
+							  </div>
+							  <hr class="text-hr">
+							  <p>
+								<a>Відправленно <%= testResult.sender.username %></a>
+							  </p>
+							  <hr class="text-hr">
+							  <p>
+								<a href="/test/<%= testResult._id %>" class="btn btn-outline-primary">Детальніше</a>
+							  </p>
 						</div>
-					  </div>
+					</div>
 					<% });%>
-	  </div>
-    <hr class="text-hr">
-    			<% } else { %> 
+    			<% } else { %>
+	</div>
+	<hr class="text-hr">
     <h4 class="text-center">У вас не має результатів опитувань до <%= conf.name %></h4>
     <hr class="text-hr">
 				<% } %>
