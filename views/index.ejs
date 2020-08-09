@@ -1,11 +1,13 @@
-<%- include("../partials/homeHeader") %>
+<%- include("partials/homeHeader") %>
   <!-- Jumbotron -->
   <div class="container">
     <div class="jumbotron text-center">
       <h1 class="display-3 text-uppercase jumbotron-h1">Ласкаво просимо на Science Confe!</h1>
-      <p>Перегляньте майбутні конференції з усього світу</p>
-      <a class="btn btn-outline-primary btn-lg text-capitalize" href="/confs/new" role="button">Організувати нову
-        конференцію</a>
+	  <div class="mt-4">
+		  <p>Перегляньте майбутні конференції з усього світу</p>
+      	  <a class="btn btn-outline-primary btn-lg text-capitalize" href="/confs/new" role="button">Організувати нову
+          конференцію</a>
+	  </div>
     </div>
   </div>
 
@@ -25,4 +27,4 @@
 	  <% }); %>
 	</div>
   </div>
-<%- include("../partials/footer") %>
+<%- include("partials/footer") %>

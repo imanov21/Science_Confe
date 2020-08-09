@@ -7,7 +7,13 @@ var Test = require("../models/test");
 
 //root route
 router.get("/", function(req, res){
-    res.render("home");
+    Conf.find({}, function(err, allConfs){
+       if(err){
+           console.log(err);
+       } else {
+          res.render("index",{confs:allConfs});
+       }
+    });
 });
 
 // show register form
@@ -49,7 +55,7 @@ router.post("/register", function(req, res){
         }
         passport.authenticate("local")(req, res, function(){
 		   req.flash("success", "Ласкаво просимо " + user.username + ", вас успішно зареєстровано");
-           res.redirect("/confs"); 
+           res.redirect("/"); 
         });
     });
 });
@@ -62,7 +68,7 @@ router.get("/login", function(req, res){
 //handling login logic
 router.post("/login", passport.authenticate("local", 
     {
-        successRedirect: "/confs",
+        successRedirect: "/",
         failureRedirect: "/login"
     }), function(req, res){
 });
@@ -71,7 +77,7 @@ router.post("/login", passport.authenticate("local",
 router.get("/logout", function(req, res){
    req.logout();
    req.flash("success", "Успішно вийшли з системи.");
-   res.redirect("/confs");
+   res.redirect("/");
 });
 
 module.exports = router;

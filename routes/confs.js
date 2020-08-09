@@ -5,18 +5,6 @@ var Participant = require("../models/participant");
 var Test = require("../models/test");
 var middleware = require("../middleware");
 
-
-//INDEX - show all conferences
-router.get("/", function(req, res){
-    Conf.find({}, function(err, allConfs){
-       if(err){
-           console.log(err);
-       } else {
-          res.render("confs/index",{confs:allConfs});
-       }
-    });
-});
-
 //CREATE - add new conference to DB
 router.post("/", middleware.isLoggedIn, function(req, res){
     var image = req.body.image;
@@ -61,7 +49,7 @@ router.post("/", middleware.isLoggedIn, function(req, res){
             console.log(err);
         } else {
             console.log(newlyCreated);
-            res.redirect("/confs");
+            res.redirect("/");
         }
     });
 });
@@ -104,7 +92,7 @@ router.get("/:id/edit", middleware.checkConfOwnership, function(req, res){
 router.put("/:id",middleware.checkConfOwnership, function(req, res){
     Conf.findByIdAndUpdate(req.params.id, req.body.conf, function(err, updatedConf){
        if(err){
-           res.redirect("/confs");
+           res.redirect("/");
        } else {
            res.redirect("/confs/" + req.params.id);
        }
@@ -117,10 +105,10 @@ router.delete("/:id",middleware.checkConfOwnership, function(req, res){
       if(err){
 		  console.log(err);
 		  req.flash("error", "Не вдалося відмінити конференцію");
-          res.redirect("/confs");
+          res.redirect("/");
       } else {
 		  req.flash("success", "Конференцію успішно скасовано");
-          res.redirect("/confs");	  
+          res.redirect("/");	  
       }
    });
 });
