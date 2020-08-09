@@ -55,7 +55,6 @@ app.use("/", indexRoutes);
 app.use("/confs", confRoutes);
 app.use("/confs/:id/participants", participantRoutes);
 
-
 app.listen(process.env.PORT, function(){
 	console.log('App successfully has started');
 });
