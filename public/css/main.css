@@ -90,6 +90,13 @@
   background-color: black;
 }
 
+@media (min-width: 576px){
+  .jumbotron {
+    padding: 3rem 2rem;
+  }
+}
+
+
 @media screen and (max-width: 1200px) {
   .jumbotron-h1 {
     font-size: 2rem;
@@ -144,7 +151,7 @@ footer {
   border: 1px solid #919ba4;
 }
 
-.login-form { /* поменять везде login-form на form-primary */
+.login-form {
   width: 340px;
   margin: 50px auto;
 }
@@ -168,6 +175,10 @@ footer {
   h2 {
     font-size: 1.2em;
   }
+	
+  .jumbotron div p {
+	display: none;	
+  }	
 }
 
 .form-control, .btn {

@@ -76,7 +76,7 @@ router.post("/",middleware.isLoggedIn,function(req, res){
 
 		if(err){
 		   console.log(err);
-		   res.redirect("/confs");
+		   res.redirect("/");
 		} else {
 		   Participant.create(newParticipant, function(err, participant){
 			   if(err){

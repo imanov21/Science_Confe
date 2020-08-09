@@ -1,4 +1,4 @@
-var express     = require("express"),
+const express     = require("express"),
     app         = express(),
     bodyParser  = require("body-parser"),
     mongoose    = require("mongoose"),
@@ -8,15 +8,16 @@ var express     = require("express"),
     methodOverride = require("method-override"),
     Conf  = require("./models/conf"),
     Participant     = require("./models/participant"),
-    User        = require("./models/user"),
-    seedDB      = require("./seeds")
+    User        = require("./models/user");
     
 //requiring routes
-var participantRoutes    = require("./routes/participants"),
-    confRoutes = require("./routes/confs"),
-    indexRoutes      = require("./routes/index")
-   
-mongoose.connect("mongodb+srv://devantony:topcodeR37@cluster0.e1xol.mongodb.net/sc_db?retryWrites=true&w=majority", { 
+const participantRoutes    = require("./routes/participants"),
+      confRoutes 		   = require("./routes/confs"),
+      indexRoutes      	   = require("./routes/index");
+
+const dbUrl = process.env.DATABASEURL || "mongodb://localhost:27017/sf_db";
+
+mongoose.connect(dbUrl, { 
 	useUnifiedTopology: true,                         
 	useNewUrlParser: true,                            
 })
@@ -25,21 +26,11 @@ mongoose.connect("mongodb+srv://devantony:topcodeR37@cluster0.e1xol.mongodb.net/
 console.log("DB Connection Error: " + err.message);
 });
 
-// mongoose.connect("mongodb://localhost:27017/sf_db", { 
-// 	useUnifiedTopology: true,                         
-// 	useNewUrlParser: true,                            
-// })
-// .then(() => console.log('DB Connected!'))
-// .catch(err => {
-// console.log("DB Connection Error: " + err.message);
-// });
-
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 app.use(flash());
-//seedDB(); //clear date from the database
 
 // PASSPORT CONFIGURATION
 app.use(require("express-session")({
@@ -65,6 +56,6 @@ app.use("/confs", confRoutes);
 app.use("/confs/:id/participants", participantRoutes);
 
 
-app.listen(process.env.PORT || 3000, function(){
-	console.log('Server started');
+app.listen(process.env.PORT, function(){
+	console.log('App successfully has started');
 });
